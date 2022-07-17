@@ -3,86 +3,96 @@
 #SingleInstance Force
 SendMode Input
 SetWorkingDir %A_ScriptDir%
-#Include dist\Gdip2.ahk
-; Gdip Init
-gdip1 := new Gdip()
-bitmap1 := Gdip.BitmapFromFile("legend.png")
-return
-Esc::
-win1.Remove()
-Reload
-return
+
+; #Include dist\Gdip2.ahk
+; ; Gdip Init
+; gdip1 := new Gdip()
+; bitmap1 := Gdip.BitmapFromFile("legend.png")
+; return
+; Esc::
+; win1.Remove()
+; Reload
+; return
+
+; # WIN
+; ^ CTRL
+; ! ALT
+; + SHIFT
 
 ;#IfWinActive ahk_class SunAwtFrame
-;#IfWinActive ahk_class Chrome_WidgetWin_1
-#IfWinActive ahk_class HwndWrapper[DefaultDomain;;b434a827-744b-422b-8bfa-9da401cfb3ee]
+#IfWinActive ahk_class Chrome_WidgetWin_1
+;#IfWinActive ahk_exe devenv.exe
 
-#q::
+#Numpad0::
+SendRaw ░
 return
-#+q::
+#NumpadDot::
+SendRaw  
 return
-#w::
+#Numpad1::
+SendRaw ▒
 return
-#e::
+#Numpad2::
+SendRaw ▄
 return
-#+e::
+#Numpad3::
+SendRaw ▓
 return
-#r::
+#Numpad4::
+SendRaw ▌
 return
-#+r::
+#Numpad5::
+SendRaw █
 return
-#t::
+#Numpad6::
+SendRaw ▐
 return
-#+t::
-return		
-#y::
+#Numpad7::
+SendRaw «
 return
-#u::
+#Numpad8::
+SendRaw ▀
 return
-#i::
+#Numpad9::
+SendRaw »
 return
-#+o::
+
+^Numpad0::
+SendRaw ─
 return
-#p::
+^NumpadDot::
+SendRaw │
 return
-#å::
+^Numpad1::
+SendRaw └
 return
-#a::
+^Numpad2::
+SendRaw ┴
 return
-#+a::
+^Numpad3::
+SendRaw ┘
 return
-#s::
+^Numpad4::
+SendRaw ├
 return
-#+s::
+^Numpad5::
+SendRaw ┼
 return
-#d::
+^Numpad6::
+SendRaw ┤
 return
-#+d::
+^Numpad7::
+SendRaw ┌
 return
-#f::
+^Numpad8::
+SendRaw ┬
 return
-#g::
+^Numpad9::
+SendRaw ┐
 return
-#h::
-return
-#j::
-return
-#k::
-return
-#+k::
-return
+
 #l::
 ;windows default för logout. not easy to override
-return
-#x::
-return
-#c::
-return
-#+c::
-return
-#v::
-return
-#b::
 return
 #+b::
 Send /**/{Left}{Left}{Enter}{Enter}{Up}
@@ -113,10 +123,21 @@ SendInput %CurrentDateTime%
 return
 F10::
 reload
+
+#F1::
+ToolTip,┌───┬───┬───┐`n│  «  │ ▀ │  »  │`n├───┼───┼───┤`n│  ▌  │ █ │ ▐  │`n├───┼───┼───┤`n│ ▒ │ ▄ │  ▓ │`n├───┴───┼───┤`n│     ░     │      │`n└───────┴───┘
+SetTimer, RemoveToolTip, -8000
+return
+
+^F1::
+ToolTip,┌───┬───┬───┐`n│  ┌  │  ┬  │  ┐  │`n├───┼───┼───┤`n│  ├  │  ┼  │  ┤  │`n├───┼───┼───┤`n│  └  │  ┴  │  ┘  │`n├───┴───┼───┤`n│      ─      │  │  │`n└───────┴───┘
+SetTimer, RemoveToolTip, -8000
+return
+
 F1::
 MouseGetPos, xpos, ypos 
 ToolTip, shortcuts for cSharp by a2r.`n`nWin+N = Note Comment  ,%xpos%,%ypos%
-SetTimer, RemoveToolTip, -5000
+SetTimer, RemoveToolTip, -8000
 return
 RemoveToolTip:
 ToolTip

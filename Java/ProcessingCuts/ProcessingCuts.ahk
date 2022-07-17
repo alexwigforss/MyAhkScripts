@@ -12,9 +12,7 @@ Esc::
 win1.Remove()
 Reload
 return
-
-;#IfWinActive ahk_class SunAwtFrame
-#IfWinActive ahk_class Chrome_WidgetWin_1
+#If WinActive("ahk_class SunAwtFrame") || WinActive("ahk_class Chrome_WidgetWin_1")
 #q::
 Send exit();
 return
