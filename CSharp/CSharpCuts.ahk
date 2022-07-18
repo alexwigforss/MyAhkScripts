@@ -20,8 +20,9 @@ SetWorkingDir %A_ScriptDir%
 ; + SHIFT
 
 ;#IfWinActive ahk_class SunAwtFrame
-#IfWinActive ahk_class Chrome_WidgetWin_1
+;#IfWinActive ahk_class Chrome_WidgetWin_1
 ;#IfWinActive ahk_exe devenv.exe
+#If WinActive("ahk_exe devenv.exe") || WinActive("ahk_class Chrome_WidgetWin_1")
 
 #Numpad0::
 SendRaw ░
@@ -89,6 +90,40 @@ SendRaw ┬
 return
 ^Numpad9::
 SendRaw ┐
+return
+
+^!Numpad0::
+SendRaw ═
+return
+^!NumpadDot::
+SendRaw ║
+return
+^!Numpad1::
+SendRaw ╚
+return
+^!Numpad2::
+SendRaw ╩
+return
+^!Numpad3::
+SendRaw ╝
+return
+^!Numpad4::
+SendRaw ╠
+return
+^!Numpad5::
+SendRaw ╬
+return
+^!Numpad6::
+SendRaw ╣
+return
+^!Numpad7::
+SendRaw ╔
+return
+^!Numpad8::
+SendRaw ╦
+return
+^!Numpad9::
+SendRaw ╗
 return
 
 #l::
