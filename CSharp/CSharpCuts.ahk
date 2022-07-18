@@ -92,41 +92,43 @@ return
 SendRaw ┐
 return
 
-^!Numpad0::
+Ralt & Numpad0::
 SendRaw ═
 return
-^!NumpadDot::
+Ralt & NumpadDot::
 SendRaw ║
 return
-^!Numpad1::
+;LControl & RAlt::MsgBox You pressed AltGr itself.
+;return
+Ralt & Numpad1::
 SendRaw ╚
 return
-^!Numpad2::
+Ralt & Numpad2::
 SendRaw ╩
 return
-^!Numpad3::
+Ralt & Numpad3::
 SendRaw ╝
 return
-^!Numpad4::
+Ralt & Numpad4::
 SendRaw ╠
 return
-^!Numpad5::
+Ralt & Numpad5::
 SendRaw ╬
 return
-^!Numpad6::
+Ralt & Numpad6::
 SendRaw ╣
 return
-^!Numpad7::
+Ralt & Numpad7::
 SendRaw ╔
 return
-^!Numpad8::
+Ralt & Numpad8::
 SendRaw ╦
 return
-^!Numpad9::
+Ralt & Numpad9::
 SendRaw ╗
 return
 
-#l::
+#l::║
 ;windows default för logout. not easy to override
 return
 #+b::
@@ -137,16 +139,6 @@ return
 #+n::
 Send /*╔╗╔┌─┐┌┬┐┌─┐{return}{BackSpace 2}║║║│ │ │ ├┤{return}{BackSpace}╝╚╝└─┘ ┴ └─┘{return 2}{BackSpace}*/{up}
 return
-#m::
-return
-#+m::
-return
-#,::
-return
-#.::
-return
-#-::
-return
 ;The plus sign on the mainboard. The one on the numpad start the magnifier as usuall
 #+::
 Send (<1)?0{:}1{;}{left 14}{Shift Down}{Left}{Shift Up}
@@ -156,11 +148,12 @@ return
 FormatTime, CurrentDateTime,, dd-MM-yy HH:mm
 SendInput %CurrentDateTime%
 return
+
 F10::
 reload
 
 #F1::
-ToolTip,┌───┬───┬───┐`n│  «  │ ▀ │  »  │`n├───┼───┼───┤`n│  ▌  │ █ │ ▐  │`n├───┼───┼───┤`n│ ▒ │ ▄ │  ▓ │`n├───┴───┼───┤`n│     ░     │      │`n└───────┴───┘
+ToolTip,┌───┬───┬───┐`n│  «  │ ▀ │  »  │`n├───┼───┼───┤`n│  ▌  │ █ │ ▐  │`n├───┼───┼───┤`n│ ▒ │ ▄ │  ▓ │`n├───┴───┼───┤`n│     ░     │nbs│`n└───────┴───┘
 SetTimer, RemoveToolTip, -8000
 return
 
@@ -169,9 +162,14 @@ ToolTip,┌───┬───┬───┐`n│  ┌  │  ┬  │
 SetTimer, RemoveToolTip, -8000
 return
 
+Ralt & F1::
+ToolTip,┌───┬───┬───┐`n│  ╔  │  ╦  │  ╗  │`n├───┼───┼───┤`n│  ╠  │  ╬  │  ╣  │`n├───┼───┼───┤`n│  ╚  │  ╩  │  ╝  │`n├───┴───┼───┤`n│      ═      │  ║  │`n└───────┴───┘
+SetTimer, RemoveToolTip, -8000
+return
+
 F1::
 MouseGetPos, xpos, ypos 
-ToolTip, shortcuts for cSharp by a2r.`n`nWin+N = Note Comment  ,%xpos%,%ypos%
+ToolTip, shortcuts for cSharp by a2r.`n`nWin+N = Note Comment.`nWIN = ░ ▒▄▓▌█▐«▀»`nCTRL = ─│└┴┘├┼┤┌┬┐`nALTgr = ═║╚╩╝╠╬╣╔╦╗  ,%xpos%,%ypos%
 SetTimer, RemoveToolTip, -8000
 return
 RemoveToolTip:
