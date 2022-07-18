@@ -128,7 +128,7 @@ Ralt & Numpad9::
 SendRaw ╗
 return
 
-#l::║
+#l::
 ;windows default för logout. not easy to override
 return
 #+b::
@@ -169,7 +169,7 @@ return
 
 F1::
 MouseGetPos, xpos, ypos 
-ToolTip, shortcuts for cSharp by a2r.`n`nWin+N = Note Comment.`nWIN = ░ ▒▄▓▌█▐«▀»`nCTRL = ─│└┴┘├┼┤┌┬┐`nALTgr = ═║╚╩╝╠╬╣╔╦╗  ,%xpos%,%ypos%
+ToolTip, shortcuts for cSharp by a2r.`n`nWin+N = Note Comment.`nCTRL+WIN+D = Date Time`nWIN+NMPD = ░ ▒▄▓▌█▐«▀»`nCTRL+NMPD = ─│└┴┘├┼┤┌┬┐`nALTgr+NMPD = ═║╚╩╝╠╬╣╔╦╗  ,%xpos%,%ypos%
 SetTimer, RemoveToolTip, -8000
 return
 RemoveToolTip:
