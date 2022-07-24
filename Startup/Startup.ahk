@@ -1,9 +1,13 @@
-; BUG Sometimes when scrolling it hits searchbar and gets stucked.
-;   With a small delay it happens less often.
+; BUG Sometimes when scrolling it hits searchbar and gets stucked
+;   With a small delay it happens less often
+; TODO börja labba med meenyn som poppar upp på trayiconen
+; vill där få upp e n lista på skript som man kan vilja aktivera/suspendera
+; skriv också en hotkey som poppar upp den
+
 #NoEnv
 #SingleInstance Force
 SendMode Input
-Suspend, On
+Suspend, Off
 ;WinActivate("ahk_class Shell_TrayWnd")
 
 LWin::
