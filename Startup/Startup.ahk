@@ -14,6 +14,13 @@ LWin::
 WinActivate, ahk_class Shell_TrayWnd
 return
 
+Alt & WheelUp::
+Send, {WheelUp 10}
+Return
+Alt & WheelDown::
+Send, {WheelDown 10}
+Return
+
 LWin & WheelUp::
 LWin & RControl::
 Send #{t}
