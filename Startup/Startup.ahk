@@ -14,8 +14,9 @@
 #NoEnv
 #SingleInstance Force
 SendMode Input
-Suspend, Off
-;WinActivate("ahk_class Shell_TrayWnd")
+Send, {ScrollLock}
+Sleep,10
+;Suspend % GetKeyState("ScrollLock","T") ? "Off" : "On"
 
 LWin::
 WinActivate, ahk_class Shell_TrayWnd
@@ -55,5 +56,11 @@ Return
 
 F10::Reload
 
-ScrollLock::Suspend
-Send, {ScrollLock}
+~ScrollLock::
+	Suspend Permit
+	Sleep,10
+	Suspend % GetKeyState("ScrollLock","T") ? "Off" : "On"
+Return
+
+Pause::Menu, Tray, Show
+Return
