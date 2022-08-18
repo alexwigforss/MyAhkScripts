@@ -64,3 +64,9 @@ Return
 
 Pause::Menu, Tray, Show
 Return
+
+#^d::
+;Ctrl + D is for duplicate in VS community so i moved to Win + Ctrl + D
+FormatTime, CurrentDateTime,, dd-MM-yy HH:mm
+SendInput %CurrentDateTime%
+return

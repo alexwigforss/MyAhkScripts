@@ -143,11 +143,13 @@ return
 #+::
 Send (<1)?0{:}1{;}{left 14}{Shift Down}{Left}{Shift Up}
 return
-#^d::
-;Ctrl + D is for duplicate in VS community so i moved to Win + Ctrl + D
-FormatTime, CurrentDateTime,, dd-MM-yy HH:mm
-SendInput %CurrentDateTime%
-return
+
+; Moved to startup
+; #^d::
+; ;Ctrl + D is for duplicate in VS community so i moved to Win + Ctrl + D
+; FormatTime, CurrentDateTime,, dd-MM-yy HH:mm
+; SendInput %CurrentDateTime%
+; return
 
 F10::
 reload
