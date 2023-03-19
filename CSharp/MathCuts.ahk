@@ -40,7 +40,7 @@ return
 SendRaw ²
 return
 #Numpad3::
-SendRaw ³
+SendRaw Σ
 return
 #Numpad4::
 SendRaw π
