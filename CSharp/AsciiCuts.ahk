@@ -22,7 +22,7 @@ SetWorkingDir %A_ScriptDir%
 ;#IfWinActive ahk_class SunAwtFrame
 ;#IfWinActive ahk_class Chrome_WidgetWin_1
 ;#IfWinActive ahk_exe devenv.exe
-#If WinActive("ahk_exe devenv.exe") || WinActive("ahk_class Chrome_WidgetWin_1")
+;#If WinActive("ahk_exe devenv.exe") || WinActive("ahk_class Chrome_WidgetWin_1")
 
 #Numpad0::
 SendRaw ░

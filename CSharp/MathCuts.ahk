@@ -22,7 +22,7 @@ SetWorkingDir %A_ScriptDir%
 ;#IfWinActive ahk_class SunAwtFrame
 ;#IfWinActive ahk_class Chrome_WidgetWin_1
 ;#IfWinActive ahk_exe devenv.exe
-#If WinActive("ahk_exe devenv.exe") || WinActive("ahk_class Chrome_WidgetWin_1")
+;#If WinActive("ahk_exe devenv.exe") || WinActive("ahk_class Chrome_WidgetWin_1")
 
 #0::
 SendRaw ≈
@@ -31,19 +31,19 @@ return
 SendRaw °
 return
 #NumpadDot::
-SendRaw n
+SendRaw ≤
 return
 #Numpad1::
-SendRaw n
+SendRaw ¹
 return
 #Numpad2::
-SendRaw n
+SendRaw ²
 return
 #Numpad3::
-SendRaw π
+SendRaw ³
 return
 #Numpad4::
-SendRaw n
+SendRaw π
 return
 #Numpad5::
 SendRaw ≡
@@ -52,15 +52,14 @@ return
 SendRaw ±
 return
 #Numpad7::
-SendRaw n
+SendRaw ≥
 return
 #Numpad8::
-SendRaw n
+SendRaw ∞
 return
 #Numpad9::
 SendRaw √
 return
-
 
 F1::
 MouseGetPos, xpos, ypos 
