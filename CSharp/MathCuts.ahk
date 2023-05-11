@@ -60,7 +60,13 @@ return
 #Numpad9::
 SendRaw √
 return
-
+#x::
+SendRaw ˣ
+return
+#NumpadSub::
+#-::
+SendRaw ⁻¹
+return
 F1::
 MouseGetPos, xpos, ypos 
 ToolTip, shortcuts for math by a2r.`n`nWin+N = Note Comment.`nCTRL+WIN+D = Date Time`nWIN+NMPD = ░ ▒▄▓▌█▐«▀»`nCTRL+NMPD = ─│└┴┘├┼┤┌┬┐`nALTgr+NMPD = ═║╚╩╝╠╬╣╔╦╗  ,%xpos%,%ypos%
